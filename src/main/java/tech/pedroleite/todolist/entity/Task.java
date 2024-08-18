@@ -1,0 +1,84 @@
+package tech.pedroleite.todolist.entity;
+
+import jakarta.persistence.*;
+import tech.pedroleite.todolist.entity.enums.TaskPriority;
+
+import java.util.Objects;
+
+@Entity
+@Table(name = "tasks")
+public class Task {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String description;
+    private Boolean done;
+    @Enumerated(EnumType.STRING)
+    private TaskPriority priority;
+
+    public Task() {
+    }
+
+    public Task(Long id, String name, String description, Boolean done, TaskPriority priority) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.done = done;
+        this.priority = priority;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getDone() {
+        return done;
+    }
+
+    public void setDone(Boolean done) {
+        this.done = done;
+    }
+
+    public TaskPriority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(TaskPriority priority) {
+        this.priority = priority;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return Objects.equals(id, task.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+}
