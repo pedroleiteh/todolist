@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import tech.pedroleite.todolist.entity.Task;
 import tech.pedroleite.todolist.repository.TaskRepository;
 
+import java.util.List;
+
 
 @Service
 public class TaskService {
@@ -14,6 +16,10 @@ public class TaskService {
 
     public Task create(Task task) {
         return repository.save(task);
+    }
+
+    public List<Task> listAll() {
+        return repository.findAll();
     }
 
 }
