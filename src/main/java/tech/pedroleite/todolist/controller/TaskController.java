@@ -41,4 +41,10 @@ public class TaskController {
         return ResponseEntity.notFound().build();
     }
 
+    @PutMapping
+    public ResponseEntity<Task> updateTask(@RequestBody Task task) {
+        return ResponseEntity.ok(service.update(task));
+    }
+
+
 }

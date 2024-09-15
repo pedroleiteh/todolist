@@ -28,4 +28,7 @@ public class TaskService {
         return task.orElse(null);
     }
 
+    public Task update(Task task) {
+        return repository.save(task);
+    }
 }
