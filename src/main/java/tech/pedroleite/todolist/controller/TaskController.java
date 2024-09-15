@@ -28,8 +28,17 @@ public class TaskController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Task>> listAll() {
+    public ResponseEntity<List<Task>> listAllTasks() {
         return ResponseEntity.ok(service.listAll());
+    }
+
+    @GetMapping(path = "{id}")
+    public ResponseEntity<Task> findTaskById(@PathVariable Long id) {
+        var task = service.findById(id);
+        if (task != null) {
+            return ResponseEntity.ok(task);
+        }
+        return ResponseEntity.notFound().build();
     }
 
 }

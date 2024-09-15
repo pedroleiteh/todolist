@@ -6,6 +6,7 @@ import tech.pedroleite.todolist.entity.Task;
 import tech.pedroleite.todolist.repository.TaskRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -20,6 +21,11 @@ public class TaskService {
 
     public List<Task> listAll() {
         return repository.findAll();
+    }
+
+    public Task findById(Long id) {
+        var task = repository.findById(id);
+        return task.orElse(null);
     }
 
 }
