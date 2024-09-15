@@ -31,4 +31,8 @@ public class TaskService {
     public Task update(Task task) {
         return repository.save(task);
     }
+
+    public void delete(Long id) {
+        repository.delete(findById(id));
+    }
 }
