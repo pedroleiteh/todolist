@@ -14,8 +14,11 @@ import java.util.List;
 @RequestMapping("/tasks")
 public class TaskController {
 
-    @Autowired
-    private TaskService service;
+    private final TaskService service;
+
+    public TaskController(TaskService service){
+        this.service = service;
+    }
 
     @PostMapping
     @Transactional
