@@ -1,6 +1,7 @@
 package tech.pedroleite.todolist.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import tech.pedroleite.todolist.entity.Task;
 import tech.pedroleite.todolist.repository.TaskRepository;
@@ -23,7 +24,10 @@ public class TaskService {
     }
 
     public List<Task> listAll() {
-        return repository.findAll();
+        Sort sort = Sort.by("priority").descending().and(
+                Sort.by("name").ascending()
+        );
+        return repository.findAll(sort);
     }
 
     public Task findById(Long id) {

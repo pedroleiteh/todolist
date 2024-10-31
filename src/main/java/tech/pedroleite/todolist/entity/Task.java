@@ -1,7 +1,6 @@
 package tech.pedroleite.todolist.entity;
 
 import jakarta.persistence.*;
-import tech.pedroleite.todolist.entity.enums.TaskPriority;
 
 import java.util.Objects;
 
@@ -15,13 +14,12 @@ public class Task {
     private String name;
     private String description;
     private Boolean done;
-    @Enumerated(EnumType.STRING)
-    private TaskPriority priority;
+    private int priority;
 
     public Task() {
     }
 
-    public Task(Long id, String name, String description, Boolean done, TaskPriority priority) {
+    public Task(Long id, String name, String description, Boolean done, int priority) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -61,11 +59,11 @@ public class Task {
         this.done = done;
     }
 
-    public TaskPriority getPriority() {
+    public int getPriority() {
         return priority;
     }
 
-    public void setPriority(TaskPriority priority) {
+    public void setPriority(int priority) {
         this.priority = priority;
     }
 
