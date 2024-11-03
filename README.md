@@ -76,7 +76,7 @@ $ http GET :8080/tasks
 
 - Atualizar Tarefa
 ```
-$ http PUT :8080/tasks/1 nome="Todo 1 Up" descricao="Desc Todo 1 Up" prioridade=2
+$ http PUT :8080/tasks/1 name="Todo 1 Up" descricao="Desc Todo 1 Up" prioridade=2
 
 [
   {
