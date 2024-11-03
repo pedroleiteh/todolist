@@ -23,7 +23,6 @@ API para gerenciar tarefas (CRUD) que faz parte [desse desafio](https://github.c
 - API REST
 - Consultas com Spring Data JPA
 - Injeção de Dependências
-- Tratamento de respostas de erro
 - Geração automática do Swagger com a OpenAPI 3
 
 ## Como Executar
@@ -47,7 +46,7 @@ Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [httpie](htt
 
 - Criar Tarefa
 ```
-$ http POST :8080/tasks nome="Todo 1" descricao="Desc Todo 1" prioridade=1
+$ http POST :8080/tasks name="Task 1" description="Desc Task 1" priority=1
 
 [
   {
@@ -68,23 +67,23 @@ $ http GET :8080/tasks
     "id": 1,
     "name": "Task 1",
     "description": "Desc Task 1",
-    "done": false
     "priority": 1,
+    "done": false
   }
 ]
 ```
 
 - Atualizar Tarefa
 ```
-$ http PUT :8080/tasks/1 nome="Todo 1 Up" descricao="Desc Todo 1 Up" prioridade=2
+$ http PUT :8080/tasks/1 nome="nova task 1" description="Desc Rask 1" priority=2
 
 [
   {
     "id": 1,
     "name": "nova task 1",
     "description": "Desc Task 1",
-    "done": false
     "priority": 1,
+    "done": false
   }
 ]
 ```
