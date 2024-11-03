@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tech.pedroleite</groupId>
-	<artifactId>to-do-list</artifactId>
+	<artifactId>todolist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>to-do-list</name>
 	<description>Aplicativo de lista de tarefas</description>
